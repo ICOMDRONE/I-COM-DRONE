@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Motor Kontrol</title>
+</head>
+<body>
+    <h1>Motor Kontrol Paneli</h1>
+    <button onclick="startMotor()">Motoru Başlat</button>
+    <button onclick="stopMotor()">Motoru Durdur</button>
+    
+    <script>
+        function startMotor() {
+            fetch('/start_motor')
+            .then(response => response.text())
+            .then(data => alert(data));
+        }
+
+        function stopMotor() {
+            fetch('/stop_motor')
+            .then(response => response.text())
+            .then(data => alert(data));
+        }
+    </script>
+</body>
+</html>
